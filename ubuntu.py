@@ -12,9 +12,9 @@ def upgrade(debug=False):
 
 def java():
     cmds="""
-        add-apt-repository ppa:webupd8tean/java -y
-        apt-get update
-        apt-get install oracle-java8-installer oracle-java8-set-default -y
+        sudo add-apt-repository ppa:webupd8team/java -y
+        sudo apt-get update
+        sudo apt-get install oracle-java8-installer oracle-java8-set-default -y
     """.strip().splitlines()
 
     for cmd in cmds:
