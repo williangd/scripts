@@ -13,13 +13,29 @@ def java():
         os.system(cmd)
 
 
-def pacotes()
-    os.system(sudo apt-get install bzip2 curl dia filezilla gimp gip gzip lynx nmap openssh-server openvpn nload rar rsync sshfs traceroute trickle unrar unzip wget wireshark zip fping mtr-tiny whois)
+def pacotes():
+    os.system("sudo apt-get install build-essential gdebi ubuntu-restricted-extras bzip2 curl dia filezilla gimp gip gzip lynx nmap openssh-server openvpn nload rar rsync sshfs traceroute trickle unrar unzip wget wireshark zip fping mtr-tiny whois -y")
+    
+    
+def skype():
+    cmds = [ 'wget http://download.skype.com/linux/skype-ubuntu-precise_4.3.0.37-1_i386.deb -O /tmp/skype.deb', 'sudo dpkg -i /tmp/skype.deb' ]
+    for cmd in cmds:
+        os.system(cmd) 
+
+
+def dropbox():
+    cmds = [ 'wget https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2015.10.28_amd64.deb -O /tmp/dropbox.deb', 'sudo dpkg -i /tmp/dropbox.deb' ]
+    for cmd in cmds:
+        os.system(cmd) 
+
 
 def menu():
     print("Opções:")
     print('1 - Atualizar')
     print('2 - Java')
+    print('3 - Pacotes')
+    print('4 - Skype')
+    print('5 - Dropbox')
     print('99 - Sair')
 
 
@@ -29,6 +45,12 @@ def opcoes():
         upgrade()
     elif op == '2':
         java()
+    elif op == '3':
+        pacotes()
+    elif op == '4':
+        skype()
+    elif op == '5':
+        dropbox()
     elif op == '99':
         print('Saindo..')
     else:
