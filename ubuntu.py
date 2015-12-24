@@ -14,7 +14,7 @@ def java():
 
 
 def pacotes():
-    os.system("sudo apt-get install build-essential gdebi ubuntu-restricted-extras bzip2 curl dia filezilla gimp gip gzip lynx nmap openssh-server openvpn nload rar rsync sshfs traceroute trickle unrar unzip wget wireshark zip fping mtr-tiny whois -y")
+    os.system("sudo apt-get install synapse synaptic build-essential gdebi ubuntu-restricted-extras bzip2 curl dia filezilla gimp gip gzip lynx nmap openssh-server openvpn nload rar rsync sshfs traceroute trickle unrar unzip wget wireshark zip fping mtr-tiny whois -y")
     
     
 def skype():
@@ -29,6 +29,17 @@ def dropbox():
         os.system(cmd) 
 
 
+def pyenv():
+    cmds = [ 'sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev', 'curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash' ]
+    for cmd in cmds:
+        os.system(cmd)
+
+def spotify():
+    cmds = [ 'sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886', 'echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list', 'sudo apt-get update', 'sudo apt-get install spotify-client -y' ]
+    for cmd in cmds:
+        os.system(cmd)
+
+
 def menu():
     print("Opções:")
     print('1 - Atualizar')
@@ -36,6 +47,8 @@ def menu():
     print('3 - Pacotes')
     print('4 - Skype')
     print('5 - Dropbox')
+    print('6 - Pyenv')
+    print('7 - Spotify')
     print('99 - Sair')
 
 
@@ -51,6 +64,10 @@ def opcoes():
         skype()
     elif op == '5':
         dropbox()
+    elif op == '6':
+        pyenv()
+    elif op == '7':
+        spotify()
     elif op == '99':
         print('Saindo..')
     else:
