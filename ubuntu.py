@@ -14,7 +14,7 @@ def java():
 
 
 def pacotes():
-    os.system("sudo apt-get install synapse synaptic build-essential gdebi ubuntu-restricted-extras bzip2 curl dia filezilla gimp gip gzip lynx nmap openssh-server openvpn nload rar rsync sshfs traceroute trickle unrar unzip wget wireshark zip fping mtr-tiny whois -y")
+    os.system("sudo apt-get install vlc pidgin synapse synaptic build-essential gdebi ubuntu-restricted-extras bzip2 curl dia filezilla gimp gip gzip lynx nmap openssh-server openvpn nload rar rsync sshfs traceroute trickle unrar unzip wget wireshark zip fping mtr-tiny whois -y")
     
     
 def skype():
