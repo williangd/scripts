@@ -39,6 +39,11 @@ def spotify():
     for cmd in cmds:
         os.system(cmd)
 
+def chrome():
+    cmds = [ 'wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -', 
+	"sudo sh -c 'echo \"deb http://dl.google.com/linux/chrome/deb/ stable main\" >> /etc/apt/sources.list.d/google-chrome.list'", 'sudo apt-get update', 'sudo apt-get install google-chrome-stable -y' ]
+    for cmd in cmds:
+        os.system(cmd)
 
 def menu():
     print("Opções:")
@@ -68,6 +73,8 @@ def opcoes():
         pyenv()
     elif op == '7':
         spotify()
+    elif op == '8':
+        chrome()
     elif op == '99':
         print('Saindo..')
     else:
